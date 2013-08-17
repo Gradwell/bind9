@@ -1,3 +1,13 @@
+bind9 (1:9.8.4.dfsg.P1-6+nmu1) unstable; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * Fix cve-2012-5689: issue in nameservers using DNS64 to perform a AAAA
+    lookup for a record with an A record overwrite rule in a Response Policy
+    Zone (closes: #699145).
+  * Fix cve-2013-2266: issues in regular expression handling (closes: #704174).
+
+ -- Michael Gilbert <mgilbert@debian.org>  Fri, 29 Mar 2013 00:47:25 +0000
+
 bind9 (1:9.8.4.dfsg.P1-6) unstable; urgency=low
 
   [Ben Hutchings]
