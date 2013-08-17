@@ -1,3 +1,19 @@
+bind9 (1:9.8.4.dfsg.P1-6+nmu3) unstable; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * CVE-2013-4854: A specially crafted query that includes malformed rdata can
+    cause named to terminate with an assertion failure while rejecting the
+    malformed query. (Closes: #717936).
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 27 Jul 2013 10:24:07 +0200
+
+bind9 (1:9.8.4.dfsg.P1-6+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Install /usr/include/dns/rrl.h (closes: #699834).
+
+ -- Michael Gilbert <mgilbert@debian.org>  Tue, 16 Apr 2013 01:59:05 +0000
+
 bind9 (1:9.8.4.dfsg.P1-6+nmu1) unstable; urgency=high
 
   * Non-maintainer upload by the Security Team.
