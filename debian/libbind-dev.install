@@ -1,4 +1,5 @@
 usr/include
+../../lib/dns/include/dns/rrl.h usr/include/dns
 usr/lib/libbind9.a
 usr/lib/libbind9.so
 usr/lib/libdns.a
