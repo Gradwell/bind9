@@ -104,6 +104,7 @@ options {\n\
 	transfers-per-ns 2;\n\
 	transfers-in 10;\n\
 	transfers-out 10;\n\
+	treat-all-as-recursive false;\n\
 	treat-cr-as-space true;\n\
 	use-id-pool true;\n\
 	use-ixfr true;\n\
