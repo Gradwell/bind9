@@ -1,3 +1,9 @@
+bind9 (0:9.8.4.dfsg.P1-6+nmu3+gw1) stable; urgency=low
+
+  * Gradwell modifications.
+
+ -- Ben Smithurst <ben.smithurst@gradwell.com>  Thu, 02 Jan 2014 18:59:54 +0000
+
 bind9 (1:9.8.4.dfsg.P1-6+nmu3) unstable; urgency=high
 
   * Non-maintainer upload by the Security Team.
