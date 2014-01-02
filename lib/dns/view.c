@@ -159,6 +159,7 @@ dns_view_create(isc_mem_t *mctx, dns_rdataclass_t rdclass,
 	 * Initialize configuration data with default values.
 	 */
 	view->recursion = ISC_TRUE;
+	view->treatallasrecursive = ISC_FALSE;
 	view->auth_nxdomain = ISC_FALSE; /* Was true in BIND 8 */
 	view->additionalfromcache = ISC_TRUE;
 	view->additionalfromauth = ISC_TRUE;

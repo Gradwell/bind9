@@ -2078,6 +2078,9 @@ dns_message_renderheader(dns_message_t *msg, isc_buffer_t *target) {
 	tmp |= (msg->rcode & DNS_MESSAGE_RCODE_MASK);
 	tmp |= (msg->flags & DNS_MESSAGE_FLAG_MASK);
 
+	/* Gradwell hack, for the LBNS stuff, we /always/ pretend to be authoritative */
+	tmp |= DNS_MESSAGEFLAG_AA;
+
 	INSIST(msg->counts[DNS_SECTION_QUESTION]  < 65536 &&
 	       msg->counts[DNS_SECTION_ANSWER]    < 65536 &&
 	       msg->counts[DNS_SECTION_AUTHORITY] < 65536 &&

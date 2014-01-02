@@ -7612,7 +7612,7 @@ ns_query_start(ns_client_t *client) {
 			client->opt->ttl &= ~DNS_MESSAGEEXTFLAG_DO;
 	}
 
-	if ((message->flags & DNS_MESSAGEFLAG_RD) != 0)
+	if ((message->flags & DNS_MESSAGEFLAG_RD) != 0 || client->view->treatallasrecursive)
 		client->query.attributes |= NS_QUERYATTR_WANTRECURSION;
 
 	if ((client->extflags & DNS_MESSAGEEXTFLAG_DO) != 0)
@@ -7631,7 +7631,7 @@ ns_query_start(ns_client_t *client) {
 		client->query.attributes &=
 			~(NS_QUERYATTR_RECURSIONOK|NS_QUERYATTR_CACHEOK);
 	} else if ((client->attributes & NS_CLIENTATTR_RA) == 0 ||
-		   (message->flags & DNS_MESSAGEFLAG_RD) == 0) {
+		   ((message->flags & DNS_MESSAGEFLAG_RD) == 0 && !client->view->treatallasrecursive)) {
 		/*
 		 * If the client isn't allowed to recurse (due to
 		 * "recursion no", the allow-recursion ACL, or the

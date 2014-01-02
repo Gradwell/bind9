@@ -2720,6 +2720,11 @@ configure_view(dns_view_t *view, cfg_obj_t *config, cfg_obj_t *vconfig,
 	view->recursion = cfg_obj_asboolean(obj);
 
 	obj = NULL;
+	result = ns_config_get(maps, "treat-all-as-recursive", &obj);
+	INSIST(result == ISC_R_SUCCESS);
+	view->treatallasrecursive = cfg_obj_asboolean(obj);
+
+	obj = NULL;
 	result = ns_config_get(maps, "auth-nxdomain", &obj);
 	INSIST(result == ISC_R_SUCCESS);
 	view->auth_nxdomain = cfg_obj_asboolean(obj);
